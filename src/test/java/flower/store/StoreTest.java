@@ -52,7 +52,8 @@ public class StoreTest {
 
         FlowerPack redRosesPack = new FlowerPack(roseRed, QTY_ROSES);
         FlowerPack blueTulipsPack = new FlowerPack(tulipBlue, QTY_TULIPS);
-        FlowerPack redChamomilePack = new FlowerPack(chamomileRed, QTY_CHAMOMILE);
+        FlowerPack redChamomilePack = 
+        new FlowerPack(chamomileRed, QTY_CHAMOMILE);
 
         bucketRed = new FlowerBucket(); 
         bucketRed.add(redRosesPack);
@@ -72,7 +73,8 @@ public class StoreTest {
     @Test
     public void testFlowerPackPriceCalculatedCorrectly() {
         FlowerPack pack = new FlowerPack(roseRed, QTY_ROSES);
-        Assertions.assertEquals(TEST_PRICE_ROSE * QTY_ROSES, pack.getPrice(), DELTA);
+        Assertions.assertEquals(TEST_PRICE_ROSE * QTY_ROSES, 
+        pack.getPrice(), DELTA);
     }
 
     @Test
