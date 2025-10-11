@@ -6,9 +6,6 @@ import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.junit.jupiter.api.Assertions.assertFalse;
 
 public class StoreTest {
     
@@ -21,7 +18,7 @@ public class StoreTest {
     private static final int QTY_ROSES = 10;
     private static final int QTY_TULIPS = 5;
     private static final int QTY_CHAMOMILE = 20;
-    private static final double DELTA = 0.001;
+    private static final double DELTA = 0.001; 
 
     private Store store;
     private Flower roseRed;
@@ -75,36 +72,39 @@ public class StoreTest {
     @Test
     public void testFlowerPackPriceCalculatedCorrectly() {
         FlowerPack pack = new FlowerPack(roseRed, QTY_ROSES);
-        assertEquals(TEST_PRICE_ROSE * QTY_ROSES, pack.getPrice(), DELTA);
+        Assertions.assertEquals(TEST_PRICE_ROSE * QTY_ROSES, pack.getPrice(), DELTA);
     }
 
     @Test
     public void testFlowerBucketPriceCalculatedCorrectly() {
         double expectedPrice = (TEST_PRICE_CHAMOMILE * QTY_CHAMOMILE) 
                              + (TEST_PRICE_TULIP * QTY_TULIPS);
-        assertEquals(expectedPrice, bucketMixed.getPrice(), DELTA);
+        Assertions.assertEquals(expectedPrice, bucketMixed.getPrice(), DELTA);
     }
     
-    @Test 
+
+    @Test
     public void testFlowerColorSpecificationFoundRed() {
         Specification redSpec = new FlowerColorSpecification(FlowerColor.RED);
         List<FlowerBucket> found = store.search(redSpec);
 
-        assertEquals(2, found.size()); 
-        assertTrue(found.contains(bucketRed));
-        assertTrue(found.contains(bucketMixed));
+        Assertions.assertEquals(2, found.size()); 
+        Assertions.assertTrue(found.contains(bucketRed));
+        Assertions.assertTrue(found.contains(bucketMixed));
     }
 
     @Test 
     public void testFlowerColorSpecificationNotFound() {
-        Specification redSpec = new FlowerColorSpecification(FlowerColor.RED);
-        List<FlowerBucket> found = store.search(redSpec);
+        Specification blueSpec = new FlowerColorSpecification(FlowerColor.BLUE);
+        List<FlowerBucket> found = store.search(blueSpec);
         
-        assertFalse(found.contains(bucketBlue));
+        
+        Assertions.assertFalse(found.contains(bucketRed));
+        Assertions.assertEquals(2, found.size()); 
     }
 
-    @Test
+    @Test 
     public void testFlowerTypeSpecificationIsNextStep() {
-        assertTrue(true);
+        Assertions.assertTrue(true);
     }
 }
