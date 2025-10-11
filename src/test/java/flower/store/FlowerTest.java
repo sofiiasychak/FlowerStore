@@ -25,9 +25,10 @@ public class FlowerTest {
     }
 
     @Test
-    public void testColor() {
-        FlowerColor color = FlowerColor.RED;
-        flower.setColor(color);
-        Assertions.assertEquals("#FF0000", flower.getColor());
-    }
+public void testColor() {
+    FlowerColor color = FlowerColor.RED;
+    flower.setColor(color);
+    Assertions.assertEquals(color, flower.getColor());
+    Assertions.assertEquals("#FF0000", flower.getColorCode());
+}
 }
