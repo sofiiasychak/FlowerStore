@@ -1,4 +1,4 @@
-package flower.store;
+package test.java.flower.store;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
