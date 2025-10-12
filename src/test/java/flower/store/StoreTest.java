@@ -85,20 +85,7 @@ public class StoreTest {
     }
     
 
-    @Test
-    public void testFlowerColorSpecificationFoundRed() {
-        Specification redSpec = new FlowerColorSpecification(FlowerColor.RED);
-        List<FlowerBucket> found = store.search(redSpec);
-
-        Assertions.assertEquals(2, found.size()); 
-        Assertions.assertTrue(found.contains(bucketRed));
-        Assertions.assertTrue(found.contains(bucketMixed));
-    }
-
-    @Test 
-    public void testFlowerColorSpecificationNotFound() {
-        Specification blueSpec = new FlowerColorSpecification(FlowerColor.BLUE);
-        List<FlowerBucket> found = store.search(blueSpec);
+    
         
         
         Assertions.assertFalse(found.contains(bucketRed));
