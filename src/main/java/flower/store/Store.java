@@ -10,11 +10,7 @@ public class Store {
         buckets.add(bucket);
     }
 
-    /**
-     * Searches the store's inventory for FlowerBuckets that satisfy the given specification.
-     * @param spec The search criterion (Specification).
-     * @return A list of FlowerBuckets that satisfy the specification.
-     */
+
     public List<FlowerBucket> search(Specification spec) {
         List<FlowerBucket> foundBuckets = new ArrayList<>();
         
