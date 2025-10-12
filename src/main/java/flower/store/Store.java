@@ -1,6 +1,4 @@
-package main.java.flower.store;
-import flower.store.FlowerBucket;
-
+package flower.store;
 import java.util.ArrayList;
 import java.util.List;
 
