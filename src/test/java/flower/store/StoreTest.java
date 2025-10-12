@@ -85,12 +85,6 @@ public class StoreTest {
     }
     
 
-    
-        
-        
-        Assertions.assertFalse(found.contains(bucketRed));
-        Assertions.assertEquals(2, found.size()); 
-    }
 
     @Test 
     public void testFlowerTypeSpecificationIsNextStep() {
