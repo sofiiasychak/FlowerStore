@@ -1,4 +1,6 @@
 package main.java.flower.store;
+import flower.store.FlowerBucket;
+
 
 /**
  * Interface for the Specification pattern, used to check if
